@@ -1,0 +1,110 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://www.w3schools.com"
+    xmlns="https://www.w3schools.com"
+    elementFormDefault="qualified">
+
+    <xs:element name="atoms">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="atom" maxOccurs="unbounded"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="atom">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name"></xs:element>
+                <xs:element ref="symbol"></xs:element>
+                <xs:element ref="atoms_characteristics"></xs:element>
+                <xs:element name="discoverer">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="name_discoverer"></xs:element>
+                            <xs:element ref="surname1_discoverer"></xs:element>
+                            <xs:element ref="surname2_discoverer"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="bolling_point">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:int">
+                                <xs:attribute name="unidades" type="unidType" default="centigrados"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="density" type="xs:int" minOccurs="0"></xs:element>
+                <xs:element name="origin"></xs:element>
+            
+            </xs:sequence>
+            <xs:attribute name="state" type="StateType"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="StateType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="solid"></xs:enumeration>
+            <xs:enumeration value="liquid"></xs:enumeration>
+            <xs:enumeration value="gas"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="name">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-ZÁÉÍÓÚÑ][a-záéíóúñ]*" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="symbol">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z]{1,3}"></xs:pattern>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="atoms_characteristics">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="atom_weight" type="xs:int"></xs:element>
+                <xs:element name="atom_number" type="xs:int"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="name_discoverer">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z][a-z]*" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="surname1_discoverer">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z][a-z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="surname2_discoverer">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z][a-z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:simpleType name="unidType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="centigrados"/>
+            <xs:enumeration value="kelvin"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

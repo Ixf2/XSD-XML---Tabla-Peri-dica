@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!-- <!DOCTYPE root-element SYSTEM "file.dtd"> -->
+
+<atoms xmlns="https://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="https://www.w3schools.com elements.xsd">
+    <atom state="liquid">
+        <name>Alfalfa</name>
+        <symbol>O</symbol>
+        <atoms_characteristics>
+            <atom_weight>34</atom_weight>
+            <atom_number>1</atom_number>
+        </atoms_characteristics>
+        <discoverer>
+            <name_discoverer>Julian</name_discoverer>
+            <surname1_discoverer>Rodriguez</surname1_discoverer>
+            <surname2_discoverer>Garcia</surname2_discoverer>
+        </discoverer>
+
+        <bolling_point unidades="kelvin">423</bolling_point>
+        <density>34</density>
+        <origin>
+            <terrestrial></terrestrial>
+            <extraterrestrial></extraterrestrial>
+        </origin>
+    </atom>
+</atoms>
