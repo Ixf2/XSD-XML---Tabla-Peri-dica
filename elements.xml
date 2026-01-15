@@ -21,7 +21,7 @@ xsi:schemaLocation="https://www.w3schools.com elements.xsd">
         <density>34</density>
         <origin>
  
-            <extraterrestrial></extraterrestrial>
+            <extraterrestrial>asd</extraterrestrial>
         </origin>
     </atom>
 
