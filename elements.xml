@@ -12,16 +12,42 @@ xsi:schemaLocation="https://www.w3schools.com elements.xsd">
             <atom_number>1</atom_number>
         </atoms_characteristics>
         <discoverer>
-            <name_discoverer>Julian</name_discoverer>
-            <surname1_discoverer>Rodriguez</surname1_discoverer>
-            <surname2_discoverer>Garcia</surname2_discoverer>
+            <discoverer_name>Julian</discoverer_name>
+            <discoverer_surname1>Rodriguez</discoverer_surname1>
+            <discoverer_surname2>Garcia</discoverer_surname2>
         </discoverer>
 
         <bolling_point unidades="kelvin">423</bolling_point>
         <density>34</density>
         <origin>
-            <terrestrial></terrestrial>
+            <terrestrial>
+                
+            </terrestrial>
             <extraterrestrial></extraterrestrial>
+        </origin>
+    </atom>
+
+    <atom state="liquid">
+        <name>Alfalfa</name>
+        <symbol>O</symbol>
+        <atoms_characteristics>
+            <atom_weight>34</atom_weight>
+            <atom_number>1</atom_number>
+        </atoms_characteristics>
+        <discoverer>
+            <discoverer_name>Julian</discoverer_name>
+            <discoverer_surname1>Rodriguez</discoverer_surname1>
+            <discoverer_surname2>Garcia</discoverer_surname2>
+        </discoverer>
+
+        <bolling_point unidades="kelvin">423</bolling_point>
+        <density>34</density>
+        <origin>
+            <terrestrial>
+                <first_seen_continent continent="europe"></first_seen_continent>
+                <last_seen_continent continent="europe"></first_seen_continent>
+            </terrestrial>
+
         </origin>
     </atom>
 </atoms>

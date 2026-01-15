@@ -30,14 +30,16 @@
                     <xs:complexType>
                         <xs:simpleContent>
                             <xs:extension base="xs:decimal">
-                                <!--use="optional" para dar opcionar el atributo-->
+                                <!--use="optional"
+                                para dar opcionar el atributo-->
                                 <xs:attribute name="unidades" type="unidType" default="centigrados" />
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="density" type="xs:int" minOccurs="0"></xs:element>
-                <xs:element name="origin"></xs:element>
+                <xs:element ref="origin"></xs:element>
+
 
             </xs:sequence>
             <xs:attribute name="state" type="StateType"></xs:attribute>
@@ -70,7 +72,8 @@
 
     <xs:element name="atoms_characteristics">
         <xs:complexType>
-            <xs:all> <!--All hace que todo lo que haya dentro aunque esté diferente orden lo detecte-->
+            <xs:all> <!--All
+                hace que todo lo que haya dentro aunque esté diferente orden lo detecte-->
                 <xs:element name="atom_weight" type="xs:decimal"></xs:element>
                 <xs:element name="atom_number" type="xs:positiveInteger"></xs:element>
             </xs:all>
@@ -91,5 +94,26 @@
             <xs:enumeration value="kelvin" />
         </xs:restriction>
     </xs:simpleType>
+
+    <xs:element name="origin">
+        <xs:complexType>
+            <xs:choice> <!-- choise o bien es uno u otro-->
+                <xs:element name="terrestial">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:group ref="seenContinents"></xs:group>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="extraterrestial"></xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+<xs:group name="seenContinents">
+    <xs:sequence>
+        <xs:element name="terrestrial"></xs:element>
+        <xs:element name="extraterrestrial"></xs:element>
+    </xs:sequence>
+</xs:group>
 
 </xs:schema>
