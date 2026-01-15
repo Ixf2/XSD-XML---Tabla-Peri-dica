@@ -95,25 +95,41 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:element name="origin">
-        <xs:complexType>
-            <xs:choice> <!-- choise o bien es uno u otro-->
-                <xs:element name="terrestial">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:group ref="seenContinents"></xs:group>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="extraterrestial"></xs:element>
-            </xs:choice>
-        </xs:complexType>
-    </xs:element>
-<xs:group name="seenContinents">
-    <xs:sequence>
-        <xs:element name="terrestrial"></xs:element>
-        <xs:element name="extraterrestrial"></xs:element>
-    </xs:sequence>
-</xs:group>
+   <xs:element name="origin">
+    <xs:complexType>
+        <xs:choice>
+            <xs:element name="terrestrial">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="first_seen_continent" minOccurs="0">
+                            <xs:complexType>
+                                <xs:attribute name="continent" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+
+                        <xs:element name="last_seen_continent" minOccurs="0">
+                            <xs:complexType>
+                                <xs:attribute name="continent" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="extraterrestrial"/>
+        </xs:choice>
+    </xs:complexType>
+</xs:element>
+
+
+
+
+<xs:element name="atomo" substitutionGroup="atom"></xs:element> 
+
+
+
+
+
+
 
 </xs:schema>

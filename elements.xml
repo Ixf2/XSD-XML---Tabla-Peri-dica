@@ -20,9 +20,7 @@ xsi:schemaLocation="https://www.w3schools.com elements.xsd">
         <bolling_point unidades="kelvin">423</bolling_point>
         <density>34</density>
         <origin>
-            <terrestrial>
-                
-            </terrestrial>
+ 
             <extraterrestrial></extraterrestrial>
         </origin>
     </atom>
@@ -45,7 +43,7 @@ xsi:schemaLocation="https://www.w3schools.com elements.xsd">
         <origin>
             <terrestrial>
                 <first_seen_continent continent="europe"></first_seen_continent>
-                <last_seen_continent continent="europe"></first_seen_continent>
+                <last_seen_continent continent="europe"></last_seen_continent>
             </terrestrial>
 
         </origin>
