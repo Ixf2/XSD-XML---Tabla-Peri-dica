@@ -69,10 +69,10 @@
 
     <xs:element name="atoms_characteristics">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element name="atom_weight" type="xs:int"></xs:element>
-                <xs:element name="atom_number" type="xs:int"></xs:element>
-            </xs:sequence>
+            <xs:all> <!--All hace que todo lo que haya dentro aunque esté diferente orden lo detecte-->
+                <xs:element name="atom_weight" type="xs:decimal"></xs:element>
+                <xs:element name="atom_number" type="xs:positiveInteger"></xs:element>
+            </xs:all>
         </xs:complexType>
     </xs:element>
 
