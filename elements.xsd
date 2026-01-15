@@ -20,24 +20,25 @@
                 <xs:element name="discoverer">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element ref="name_discoverer"></xs:element>
-                            <xs:element ref="surname1_discoverer"></xs:element>
-                            <xs:element ref="surname2_discoverer"></xs:element>
+                            <xs:element name="discoverer_name" type="nameType"></xs:element>
+                            <xs:element name="discoverer_surname1" type="nameType"></xs:element>
+                            <xs:element name="discoverer_surname2" type="nameType"></xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="bolling_point">
                     <xs:complexType>
                         <xs:simpleContent>
-                            <xs:extension base="xs:int">
-                                <xs:attribute name="unidades" type="unidType" default="centigrados"/>
+                            <xs:extension base="xs:decimal">
+                                <!--use="optional" para dar opcionar el atributo-->
+                                <xs:attribute name="unidades" type="unidType" default="centigrados" />
                             </xs:extension>
                         </xs:simpleContent>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="density" type="xs:int" minOccurs="0"></xs:element>
                 <xs:element name="origin"></xs:element>
-            
+
             </xs:sequence>
             <xs:attribute name="state" type="StateType"></xs:attribute>
         </xs:complexType>
@@ -76,34 +77,18 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="name_discoverer">
-        <xs:simpleType>
-            <xs:restriction base="xs:string">
-                <xs:pattern value="[A-Z][a-z]*" />
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:element>
 
-    <xs:element name="surname1_discoverer">
-        <xs:simpleType>
-            <xs:restriction base="xs:string">
-                <xs:pattern value="[A-Z][a-z]*"/>
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:element>
+    <xs:simpleType name="nameType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][a-z]*" />
+        </xs:restriction>
+    </xs:simpleType>
 
-    <xs:element name="surname2_discoverer">
-        <xs:simpleType>
-            <xs:restriction base="xs:string">
-                <xs:pattern value="[A-Z][a-z]*"/>
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:element>
 
     <xs:simpleType name="unidType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="centigrados"/>
-            <xs:enumeration value="kelvin"/>
+            <xs:enumeration value="centigrados" />
+            <xs:enumeration value="kelvin" />
         </xs:restriction>
     </xs:simpleType>
 
